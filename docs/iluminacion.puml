@@ -1,0 +1,23 @@
+@startuml ilumination
+class Humano 
+class Foco{
+    - EstadoFoco estado
+     ()
+    + Estado+ Encender ()
+    + ApagarFoco : MostrarEstado ()
+}
+Class EstadoFoco
+class SerieNavidad{
+    - Foco focos[10]
+    + Encender()
+    + Apagar()
+    + ImprimirSerie()
+}
+
+Humano o-- Foco
+Foco *-- EstadoFoco
+EstadoFoco --|> bool
+SerieNavidad "1" *-- "10" Foco
+Humano o-- SerieNavidad
+
+@enduml
